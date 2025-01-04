@@ -1,6 +1,5 @@
 
-## Title
-Foccuz backend test
+## Foccuz backend test
 
 ## Description
 
