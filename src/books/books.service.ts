@@ -22,7 +22,7 @@ export class BooksService {
     try {
       return await this.fetchBooks();
     } catch (error) {
-      throw new HttpException('The list is empty', HttpStatus.NOT_FOUND);
+      throw new HttpException('The list empty', HttpStatus.NOT_FOUND);
     }
   }
   async getBookByISBN(isbn: string):Promise<Book> {
