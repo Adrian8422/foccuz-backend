@@ -1,30 +1,31 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { firstValueFrom } from 'rxjs';
+import { Book } from './interfaces/book.interface';
 @Injectable()
 export class BooksService {
   private readonly apiExternal =
     'https://gitlab.com/-/snippets/4789289/raw/main/data.json';
   constructor(private httpService: HttpService) {}
 
-  async fetchBooks(): Promise<any[]> {
+  async fetchBooks(): Promise<Book[]> {
     try {
       const response = await firstValueFrom(
         this.httpService.get(this.apiExternal),
       );
-      return response.data.library.map((item: any) => item.book);
+      return response.data.library.map((item: { book: Book }) => item.book);
     } catch (error) {
       throw new HttpException('Error fetching books', HttpStatus.BAD_REQUEST);
     }
   }
-  async getAllBooks() {
+  async getAllBooks():Promise<Book[]> {
     try {
       return await this.fetchBooks();
     } catch (error) {
-      return new HttpException('The list is empty', HttpStatus.NOT_FOUND);
+      throw new HttpException('The list is empty', HttpStatus.NOT_FOUND);
     }
   }
-  async getBookByISBN(isbn: string) {
+  async getBookByISBN(isbn: string):Promise<Book> {
     try {
       const books = await this.fetchBooks();
 
@@ -38,7 +39,7 @@ export class BooksService {
       throw new HttpException(error.message, error.status);
     }
   }
-  async getBooksByAuthor(search: string) {
+  async getBooksByAuthor(search: string):Promise<Book[]> {
     try {
       const books = await this.fetchBooks();
 

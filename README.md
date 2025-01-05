@@ -1,6 +1,6 @@
 
-## Title
-Foccuz backend test
+## Foccuz backend test
+
 
 ## Description
 
@@ -12,7 +12,7 @@ Este proyecto es una API RESTful desarrollada como parte del desafío técnico d
 - El proyecto está desarrollado con NestJS y utiliza las mejores prácticas para el manejo de APIs REST.
 
 ## Prerequisites
--Postman documentation API: https://documenter.getpostman.com/view/18745177/2sAYJ9AJ5b
+- Postman documentation API: https://documenter.getpostman.com/view/18745177/2sAYJ9AJ5b
 
 ## Prerequisites
 

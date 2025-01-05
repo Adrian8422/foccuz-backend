@@ -5,7 +5,6 @@ import { of, throwError } from 'rxjs';
 
 describe('BooksService', () => {
   let service: BooksService;
-  let httpService: HttpService;
 
   const mockHttpService = {
     get: jest.fn(),
@@ -20,7 +19,6 @@ describe('BooksService', () => {
     }).compile();
 
     service = module.get<BooksService>(BooksService);
-    httpService = module.get<HttpService>(HttpService);
   });
 
   it('should be defined', () => {
@@ -50,7 +48,7 @@ describe('BooksService', () => {
         },
       };
 
-      mockHttpService.get.mockReturnValue(of(mockResponse)); // Mock the http request
+      mockHttpService.get.mockReturnValue(of(mockResponse)); 
 
       const result = await service.fetchBooks();
       expect(result).toEqual(
