@@ -30,8 +30,8 @@ Consulta la documentación de la API en Postman para más detalles:
 1. Clona el repositorio:
 
 ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   cd <NOMBRE_DEL_PROYECTO>
+   git clone git@github.com:Adrian8422/foccuz-backend.git
+   cd foccuz-backend
 
 ## Instalación
 
