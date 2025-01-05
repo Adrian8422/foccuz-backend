@@ -1,7 +1,6 @@
 
 ## Foccuz backend test
 
-
 ## Description
 
 Este proyecto es una API RESTful desarrollada como parte del desafío técnico de Foccuz. Permite interactuar con un conjunto de datos que representan libros, obtenidos desde una API externa simulada, y ofrece las siguientes funcionalidades:
